@@ -1,0 +1,7 @@
+PORT=3001
+MONGO_URI=mongodb+srv://infoconwayy_db_user:4sqAlJqR4GLDAgyY@cluster0.gyzcqtx.mongodb.net/
+JWT_SECRET=lonestar_admin_secret_2024
+CLOUDINARY_CLOUD_NAME=df5l1kxpf
+CLOUDINARY_API_KEY=332117976854933
+CLOUDINARY_API_SECRET=g6gqTZ3LUwKoxPVrjBygO8laFxY
+CLOUDINARY_URL=cloudinary://332117976854933:g6gqTZ3LUwKoxPVrjBygO8laFxY@df5l1kxpf
