@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
 // Admin routes (protected)
 router.post('/', authMiddleware, upload.single('image'), async (req, res) => {
   try {
-    const { name, price, duration, description, category, featured, seo } = req.body;
+    const { name, price, duration, description, category, featured, seo, syllabus, highlights, tools, whoCanJoin, careerOptions, faqs } = req.body;
     
     const courseData = {
       name,
@@ -37,7 +37,13 @@ router.post('/', authMiddleware, upload.single('image'), async (req, res) => {
       category,
       featured: featured === 'true',
       image: req.file ? req.file.path : null,
-      seo: seo ? JSON.parse(seo) : {}
+      seo: seo ? JSON.parse(seo) : {},
+      syllabus: syllabus ? JSON.parse(syllabus) : [],
+      highlights: highlights ? JSON.parse(highlights) : [],
+      tools: tools ? JSON.parse(tools) : [],
+      whoCanJoin: whoCanJoin ? JSON.parse(whoCanJoin) : [],
+      careerOptions: careerOptions ? JSON.parse(careerOptions) : [],
+      faqs: faqs ? JSON.parse(faqs) : []
     };
 
     const course = new Course(courseData);
@@ -50,7 +56,7 @@ router.post('/', authMiddleware, upload.single('image'), async (req, res) => {
 
 router.put('/:id', authMiddleware, upload.single('image'), async (req, res) => {
   try {
-    const { name, price, duration, description, category, featured, seo } = req.body;
+    const { name, price, duration, description, category, featured, seo, syllabus, highlights, tools, whoCanJoin, careerOptions, faqs } = req.body;
     
     const updateData = {
       name,
@@ -59,7 +65,13 @@ router.put('/:id', authMiddleware, upload.single('image'), async (req, res) => {
       description,
       category,
       featured: featured === 'true',
-      seo: seo ? JSON.parse(seo) : {}
+      seo: seo ? JSON.parse(seo) : {},
+      syllabus: syllabus ? JSON.parse(syllabus) : [],
+      highlights: highlights ? JSON.parse(highlights) : [],
+      tools: tools ? JSON.parse(tools) : [],
+      whoCanJoin: whoCanJoin ? JSON.parse(whoCanJoin) : [],
+      careerOptions: careerOptions ? JSON.parse(careerOptions) : [],
+      faqs: faqs ? JSON.parse(faqs) : []
     };
 
     if (req.file) {

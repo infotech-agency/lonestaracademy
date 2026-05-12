@@ -23,13 +23,20 @@ import axios from "axios"
 const API = "http://localhost:3001";
 
 interface Course {
-  id: string;
+  _id: string;
+  id?: string;
   name: string;
   price: string;
   duration: string;
   description: string;
   category: string;
   image: string | null;
+  syllabus?: string[];
+  highlights?: string[];
+  tools?: string[];
+  whoCanJoin?: string[];
+  careerOptions?: string[];
+  faqs?: { question: string; answer: string }[];
   seo?: {
     title?: string;
     description?: string;
@@ -53,13 +60,8 @@ type CourseExtraContent = {
   careerOptions: string[];
 };
 
-const slugMap: Record<string, string> = {
-  "business-analytics": "1",
-  "data-analytics": "2",
-  "data-science": "3",
-  "digital-marketing": "4",
-  "cloud-computing": "5",
-};
+// Remove hardcoded slugMap since we use IDs now
+
 
 const courseContent: Record<string, CourseExtraContent> = {
   "Business Analytics": {
@@ -629,8 +631,7 @@ export default function CourseDetailPage() {
   const { slug: routeSlug } = useParams<{ slug: string }>();
 
   useEffect(() => {
-    const slug = routeSlug || "";
-    const id = slugMap[slug] || slug;
+    const id = routeSlug || "";
 
     fetch(`${API}/api/courses/${id}`)
       .then((r) => r.json())
@@ -721,34 +722,53 @@ export default function CourseDetailPage() {
   const content = courseContent[course.name];
 
   const heroImage =
-    pageImages[course.name] ||
-    (course.image ? `${API}${course.image}` : "/images/default-course.jpg");
+    course.image ? (course.image.startsWith('http') ? course.image : `${API}${course.image}`) : pageImages[course.name] || "/images/default-course.jpg";
 
-  const syllabus = curriculum[course.name] || [
-    "Module 1",
-    "Module 2",
-    "Module 3",
-    "Module 4",
-    "Final Project",
-  ];
+  const syllabus = (course.syllabus && course.syllabus.length > 0) 
+    ? course.syllabus 
+    : (curriculum[course.name] || [
+        "Module 1",
+        "Module 2",
+        "Module 3",
+        "Module 4",
+        "Final Project",
+      ]);
 
-  const courseFaqs = faqs[course.name] || [
-    {
-      question: "Who can join this course?",
-      answer:
-        "Students, freshers, and working professionals interested in practical learning can join this course.",
-    },
-    {
-      question: "Do you provide placement assistance?",
-      answer:
-        "Yes, we provide resume guidance, interview preparation, and placement support.",
-    },
-    {
-      question: "Is this course beginner friendly?",
-      answer:
-        "Yes, the course is designed to support beginners as well as learners with some prior knowledge.",
-    },
-  ];
+  const courseFaqs = (course.faqs && course.faqs.length > 0)
+    ? course.faqs
+    : (faqs[course.name] || [
+        {
+          question: "Who can join this course?",
+          answer:
+            "Students, freshers, and working professionals interested in practical learning can join this course.",
+        },
+        {
+          question: "Do you provide placement assistance?",
+          answer:
+            "Yes, we provide resume guidance, interview preparation, and placement support.",
+        },
+        {
+          question: "Is this course beginner friendly?",
+          answer:
+            "Yes, the course is designed to support beginners as well as learners with some prior knowledge.",
+        },
+      ]);
+      
+  const highlights = (course.highlights && course.highlights.length > 0)
+    ? course.highlights
+    : content?.highlights || [];
+    
+  const tools = (course.tools && course.tools.length > 0)
+    ? course.tools
+    : content?.tools || [];
+    
+  const careerOptions = (course.careerOptions && course.careerOptions.length > 0)
+    ? course.careerOptions
+    : content?.careerOptions || [];
+    
+  const whoCanJoin = (course.whoCanJoin && course.whoCanJoin.length > 0)
+    ? course.whoCanJoin
+    : content?.whoCanJoin || [];
 
   return (
     <>

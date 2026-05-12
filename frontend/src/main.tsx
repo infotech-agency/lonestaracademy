@@ -18,6 +18,7 @@ import AboutPage5 from "./app/pages/AboutPage5";
 import AboutPage6 from "./app/pages/AboutPage6";
 import AboutPage7 from "./app/pages/AboutPage7";
 import BlogPage from "./app/pages/BlogPage";
+// import BlogDetailPage from "./app/pages/BlogDetailPage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/about7" element={<AboutPage7 />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        {/* <Route path="/blog/:slugOrId" element={<BlogDetailPage />} /> */}
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/admin" element={<AdminPanel />} />

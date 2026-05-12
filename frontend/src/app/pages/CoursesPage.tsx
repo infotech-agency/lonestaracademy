@@ -196,7 +196,7 @@ export default function CoursesPage() {
 
                       {isMainCourse(course) && (
                         <Link
-                          to={`/courses/${courseSlugMap[course.name] || course._id || course.id}`}
+                          to={`/courses/${course._id || course.id}`}
                           className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700"
                         >
                           View Details <ArrowRight size={16} />

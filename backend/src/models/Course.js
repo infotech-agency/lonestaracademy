@@ -16,6 +16,15 @@ const courseSchema = new mongoose.Schema({
   category: String,
   image: String,
   featured: { type: Boolean, default: false },
+  syllabus: [String],
+  highlights: [String],
+  tools: [String],
+  whoCanJoin: [String],
+  careerOptions: [String],
+  faqs: [{
+    question: String,
+    answer: String
+  }],
   seo: seoSchema
 }, { timestamps: true });
 

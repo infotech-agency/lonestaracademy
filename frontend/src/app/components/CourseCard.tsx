@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 type CourseCardProps = {
+  _id?: string;
+  id?: string;
   name: string;
   price: string;
   duration: string;
@@ -9,16 +12,20 @@ type CourseCardProps = {
 };
 
 export function CourseCard({
+  _id,
+  id,
   name,
   price,
   duration,
   image,
 }: CourseCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const courseId = _id || id;
 
   return (
-    <div
-      className="relative w-full h-[320px] perspective-[1000px] cursor-pointer"
+    <Link
+      to={`/courses/${courseId}`}
+      className="relative block w-full h-[320px] perspective-[1000px] cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
@@ -51,6 +58,6 @@ export function CourseCard({
           </button>
         </div>
       </motion.div>
-    </div>
+    </Link>
   );
 }
