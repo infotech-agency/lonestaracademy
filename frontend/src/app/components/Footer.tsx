@@ -189,11 +189,12 @@ Contact us              </h3>
             
             <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
               {[
-                "about2",
-                "about3",
-                "about4",
-                "about5",
-                "about6",
+                "Buisness Analytics",
+                "Data Analytics",
+                "Data Scinece",
+                "Cloud Computing",
+                "Digital Marketing",
+                "Financial Modeling"
               ].map((course) => (
                 <div
                   key={course}

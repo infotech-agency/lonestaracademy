@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { LogIn, Eye, EyeOff } from "lucide-react";
+import { BASE_URL } from "../../../utils/baseUrl";
 
 interface Props { onLogin: (token: string) => void; }
 
@@ -16,7 +17,9 @@ export default function AdminLogin({ onLogin }: Props) {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:3001/api/auth/login", {
+      const res = await fetch(`${BASE_URL}/api/auth/login`, 
+      // const res = await fetch("https://slategrey-worm-160018.hostingersite.com/api/auth/login", 
+        {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
       });
@@ -65,7 +68,7 @@ export default function AdminLogin({ onLogin }: Props) {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
-        {/* <p className="text-center text-xs text-gray-400 mt-6">Default: admin@lonestar.com / Admin@123</p> */}
+        
       </motion.div>
     </div>
   );

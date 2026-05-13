@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../../utils/baseUrl";
 
 interface Blog {
   _id: string;
@@ -17,7 +18,8 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/blogs")
+    fetch(`${BASE_URL}/api/blogs`)
+    // fetch("https://slategrey-worm-160018.hostingersite.com/api/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(Array.isArray(data) ? data : []);

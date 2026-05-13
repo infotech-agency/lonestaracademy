@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { Search, IndianRupee, ArrowRight, BookOpen } from "lucide-react";
+import { BASE_URL } from "../../../utils/baseUrl";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = BASE_URL;
+// const API_BASE = "https://slategrey-worm-160018.hostingersite.com";
+
 
 interface Course {
   id: string;

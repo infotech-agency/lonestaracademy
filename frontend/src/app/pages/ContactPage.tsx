@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-
+import emailjs from "@emailjs/browser";
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
@@ -14,10 +14,43 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setSubmitted(true);
+  // };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await emailjs.send(
+      "service_76lx81o",
+      "template_wsxcl6y",
+      // import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        course: form.course,
+        message: form.message || "No message provided",
+      },
+      "n7XPQ7McCeA3-ALs9"
+    );
+
     setSubmitted(true);
-  };
+
+    // Reset form after successful submission
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      course: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Failed to send enquiry. Please try again.");
+  }
+};
 
   return (
     <>

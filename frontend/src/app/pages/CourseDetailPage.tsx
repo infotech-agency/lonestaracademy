@@ -19,8 +19,10 @@ import {
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import axios from "axios"
+import { BASE_URL } from "../../../utils/baseUrl";
 
-const API = "http://localhost:3001";
+const API = BASE_URL;
+// const API = "https://slategrey-worm-160018.hostingersite.com";
 
 interface Course {
   _id: string;

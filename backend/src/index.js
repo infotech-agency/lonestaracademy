@@ -13,7 +13,9 @@ connectDB();
 const coursesRouter = require("./routes/courses");
 const blogsRouter = require("./routes/blogs");
 const authRouter = require("./routes/auth");
-
+const placementRouter = require("./routes/placement"); // <-- Placement Route Import
+const tilesRoutes = require("./routes/tiles")
+;
 // Middleware
 app.use(cors({
   origin: [
@@ -36,7 +38,8 @@ const path = require('path');
 app.use("/api/courses", coursesRouter);
 app.use("/api/blogs", blogsRouter);
 app.use("/api/auth", authRouter);
-
+app.use("/api/placements", placementRouter); // <-- Placement API Route
+app.use("/api/tiles",tilesRoutes)
 // Serve local uploads
 app.use('/uploads', express.static(path.join(__dirname, '../../uploads')));
 

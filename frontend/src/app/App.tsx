@@ -27,6 +27,7 @@ import New from "./components/ui/New";
 import About from "./components/ui/About";
 import CertificateSection from "./components/ui/CertificateSection";
 import { useParams } from "react-router-dom";
+import { BASE_URL } from "../../utils/baseUrl";
 
 function CourseDetails() {
  const { slug } = useParams();
@@ -51,7 +52,8 @@ export default function App() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/courses");
+        const res = await fetch(`${BASE_URL}/api/courses`);
+        // const res = await fetch("https://slategrey-worm-160018.hostingersite.com/api/courses");
         const data = await res.json();
         if (Array.isArray(data)) {
           // Show only top 6 courses on home page
