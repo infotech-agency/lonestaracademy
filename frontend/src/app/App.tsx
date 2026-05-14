@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
@@ -28,11 +29,12 @@ import About from "./components/ui/About";
 import CertificateSection from "./components/ui/CertificateSection";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../utils/baseUrl";
+import ShortTermCourses from "./components/ShortTermCourses";
 
 function CourseDetails() {
- const { slug } = useParams();
+  const { slug } = useParams();
 
- return <div>Course: {slug}</div>;
+  return <div>Course: {slug}</div>;
 }
 
 export default function App() {
@@ -160,7 +162,7 @@ export default function App() {
             viewport={{ once: true }}
             className="mb-10 text-center sm:mb-12 lg:mb-16"
           >
-            <h2 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl text-blue-600 lg:text-5xl">
               Top <span className="text-blue-600">Trending Courses</span> at
               Lone Star Academy
             </h2>
@@ -192,7 +194,7 @@ export default function App() {
           </div>
         </div>
       </section>
-
+      <ShortTermCourses />
       <AdditionalFeatures />
       <About />
       <TrainingProcess />

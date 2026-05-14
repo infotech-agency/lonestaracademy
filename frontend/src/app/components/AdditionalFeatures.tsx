@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { DollarSign, BookOpen, Trophy } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function AdditionalFeatures() {
   const features = [
@@ -70,10 +71,11 @@ export function AdditionalFeatures() {
   className="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all"
 >
   📞 +91 9711709644
-</a>
+</a>          <Link to="/contact">
               <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
                 Request A Call Back
               </button>
+              </Link>
             </div>
           </motion.div>
         </div>

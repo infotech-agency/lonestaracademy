@@ -109,14 +109,14 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               Course Enquiry
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 text-zinc-900">
               <input
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 type="text"
                 placeholder="Name*"
-                className="w-full py-3 border-b border-gray-300 focus:border-orange-500 outline-none transition"
+                className="w-full text-zinc-900  py-3 border-b border-gray-300 focus:border-orange-500 outline-none transition"
               />
 
               <input
@@ -125,7 +125,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 onChange={handleChange}
                 type="email"
                 placeholder="Email*"
-                className="w-full py-3 border-b border-gray-300 focus:border-orange-500 outline-none transition"
+                className="w-full py-3 border-b text-zinc-900 border-gray-300 focus:border-orange-500 outline-none transition"
               />
 
               {/* Phone */}

@@ -7,6 +7,7 @@
     Mail,
     MapPin,
   } from "lucide-react";
+import { Link } from "react-router-dom";
 
   export function Footer() {
     return (
@@ -44,7 +45,7 @@ Lone Star Academy is a leading training institute in India for Data Science, Dig
                   { label: "About Us", href: "/about" },
                   { label: "All Courses", href: "/courses" },
                   { label: "Testimonials", href: "/testimonials" },
-                  { label: "Our Placement", href: "/team" },
+                  { label: "Our Placement", href: "/our-placement" },
                   { label: "Contact Us", href: "/contact" },
                 ].map(({ label, href }) => (
                   <li key={label}>
@@ -67,11 +68,23 @@ Lone Star Academy is a leading training institute in India for Data Science, Dig
 
               <ul className="space-y-5">
                 {[
-                  { label: "Business Analytics", href: "/about2"},
-                  { label: "Data Analytics", href: "/about3"},
-                  { label: "Data Science", href: "/about4"},
-                  { label: "Digital Marketing", href: "/about5"},
-                  { label: "Cloud Computing", href: "/about6"},
+                  // { label: "Business Analytics", href: "/about2"},
+                  // { label: "Data Analytics", href: "/about3"},
+                  // { label: "Data Science", href: "/about4"},
+                  // { label: "Digital Marketing", href: "/about5"},
+                  // { label: "Cloud Computing", href: "/about6"},
+//                   { label: "Business Analytics", href: "/courses/6a0404409522cb10bdef1e3b" },
+// { label: "Data Analytics", href: "/courses/6a03150e55dfbec1bf33f116" },
+// { label: "Data Science", href: "/courses/6a0319f59f8bf690e424f5b2" },
+// { label: "Digital Marketing", href: "/courses/6a031be09f8bf690e424f5b5" },
+// { label: "Cloud Computing", href: "/courses/6a031a9f9f8bf690e424f5b3" },
+// { label: "Financial Modeling", href: "/courses/6a031b4b9f8bf690e424f5b4" },
+{ label: "Business Analytics", href: "/business-analytics-course-delhi" },
+{ label: "Data Analytics", href: "/data-analytics-courses-online-delhi" },
+{ label: "Data Science", href: "/data-science-course-online-with-placement-delhi" },
+{ label: "Digital Marketing", href: "/best-online-digital-marketing-courses-delhi" },
+{ label: "Cloud Computing", href: "/cloud-computing-online-courses-delhi" },
+{ label: "Financial Modeling", href: "/financial-modelling-course-delhi" },
                 ].map(({ label, href }) => (
                   <li key={label}>
                     <a
@@ -187,7 +200,7 @@ Contact us              </h3>
               </p>
             </div>
             
-            <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
+            {/* <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
               {[
                 "Buisness Analytics",
                 "Data Analytics",
@@ -203,7 +216,67 @@ Contact us              </h3>
                   {course}
                 </div>
               ))}
-            </div>
+            </div> */}
+        
+
+<div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
+  {[
+    // {
+    //   name: "Business Analytics",
+    //   slug: "/courses/6a0404409522cb10bdef1e3b",
+    // },
+    // {
+    //   name: "Data Analytics",
+    //   slug: "/courses/6a03150e55dfbec1bf33f116",
+    // },
+    // {
+    //   name: "Data Science",
+    //   slug: "/courses/6a0319f59f8bf690e424f5b2",
+    // },
+    // {
+    //   name: "Cloud Computing",
+    //   slug: "/courses/6a031a9f9f8bf690e424f5b3",
+    // },
+    // {
+    //   name: "Digital Marketing",
+    //   slug: "/courses/6a031be09f8bf690e424f5b5",
+    // },
+    // {
+    //   name: "Financial Modeling",
+    //   slug: "/courses/6a031b4b9f8bf690e424f5b4",
+    // },
+    {
+  name: "Business Analytics",
+  slug: "/business-analytics-course-delhi",
+},
+{
+  name: "Data Analytics",
+  slug: "/data-analytics-courses-online-delhi",
+},
+{
+  name: "Data Science",
+  slug: "/data-science-course-online-with-placement-delhi",
+},
+{
+  name: "Cloud Computing",
+  slug: "/cloud-computing-online-courses-delhi",
+},
+{
+  name: "Digital Marketing",
+  slug: "/best-online-digital-marketing-courses-delhi",
+},
+{
+  name: "Financial Modeling",
+  slug: "/financial-modelling-course-delhi",
+},
+  ].map((course) => (
+    <Link key={course.name} to={course.slug}>
+      <div className="cursor-pointer rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-gray-300 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-orange-500 hover:text-white md:text-base">
+        {course.name}
+      </div>
+    </Link>
+  ))}
+</div>
           </div>
 
           {/* Areas */}
@@ -240,10 +313,10 @@ Contact us              </h3>
               </p>
 
               <div className="flex gap-4 text-sm">
-                <a href="#" className="text-gray-500 hover:text-white">
+                <a href="/privacy" className="text-gray-500 hover:text-white">
                   Privacy Policy
                 </a>
-                <a href="#" className="text-gray-500 hover:text-white">
+                <a href="/terms" className="text-gray-500 hover:text-white">
                   Terms of Service
                 </a>
                 <a href="/admin" className="text-gray-600 hover:text-gray-400">

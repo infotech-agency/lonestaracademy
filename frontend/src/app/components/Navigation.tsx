@@ -581,26 +581,105 @@ export function Navigation() {
   const [idProof, setIdProof] = useState<File | null>(null);
   const [photo, setPhoto] = useState<File | null>(null);
 
+  // const menuItems = [
+  //   {
+  //     label: "Courses",
+  //     submenu: [
+  //       { label: "Business Analytics", href: "/courses/6a0404409522cb10bdef1e3b" },
+  //       { label: "Data Analytics", href: "/courses/6a03150e55dfbec1bf33f116" },
+  //       { label: "Data Science", href: "/courses/6a0319f59f8bf690e424f5b2" },
+  //       { label: "Digital Marketing", href: "/courses/6a031be09f8bf690e424f5b5" },
+  //       { label: "Cloud Computing", href: "/courses/6a031a9f9f8bf690e424f5b3" },
+  //       { label: "Financial Modelling", href: "/courses/6a031b4b9f8bf690e424f5b4" },
+  //       { label: "All Courses", href: "/courses" },
+  //     ],
+  //   },
+  //   { label: "About Us", href: "/about" },
+  //   { label: "Our Placement", href: "/team" },
+  //   { label: "Testimonials", href: "/testimonials" },
+  //   { label: "Blog", href: "/blog" },
+  //   { label: "Contact Us", href: "/contact" },
+  // ];
+//   const menuItems = [
+//   {
+//     label: "Courses",
+//     submenu: [
+//       {
+//         label: "Business Analytics",
+//         href: "/business-analytics-course-delhi",
+//       },
+//       {
+//         label: "Data Analytics",
+//         href: "/data-analytics-course-delhi",
+//       },
+//       {
+//         label: "Data Science",
+//         href: "/data-science-course-delhi",
+//       },
+//       {
+//         label: "Digital Marketing",
+//         href: "/digital-marketing-course-delhi",
+//       },
+//       {
+//         label: "Cloud Computing",
+//         href: "/cloud-computing-course-delhi",
+//       },
+//       {
+//         label: "Financial Modelling",
+//         href: "/financial-modelling-course-delhi",
+//       },
+//       {
+//         label: "All Courses",
+//         href: "/courses",
+//       },
+//     ],
+//   },
+//   { label: "About Us", href: "/about" },
+//   { label: "Our Placement", href: "/team" },
+//   { label: "Testimonials", href: "/testimonials" },
+//   { label: "Blog", href: "/blog" },
+//   { label: "Contact Us", href: "/contact" },
+// ];
   const menuItems = [
-    {
-      label: "Courses",
-      submenu: [
-        { label: "Business Analytics", href: "/about2" },
-        { label: "Data Analytics", href: "/about3" },
-        { label: "Data Science", href: "/about4" },
-        { label: "Digital Marketing", href: "/about5" },
-        { label: "Cloud Computing", href: "/about6" },
-        { label: "Financial Modelling", href: "/about7" },
-        { label: "All Courses", href: "/courses" },
-      ],
-    },
-    { label: "About Us", href: "/about" },
-    { label: "Our Placement", href: "/team" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact Us", href: "/contact" },
-  ];
-
+  {
+    label: "Courses",
+    submenu: [
+      {
+        label: "Business Analytics",
+        href: "/business-analytics-course-delhi",
+      },
+      {
+        label: "Data Analytics",
+        href: "/data-analytics-courses-online-delhi",
+      },
+      {
+        label: "Data Science",
+        href: "/data-science-course-online-with-placement-delhi",
+      },
+      {
+        label: "Digital Marketing",
+        href: "/best-online-digital-marketing-courses-delhi",
+      },
+      {
+        label: "Cloud Computing",
+        href: "/cloud-computing-online-courses-delhi",
+      },
+      {
+        label: "Financial Modelling",
+        href: "/financial-modelling-course-delhi",
+      },
+      {
+        label: "All Courses",
+        href: "/courses",
+      },
+    ],
+  },
+  { label: "About Us", href: "/about" },
+  { label: "Our Placement", href: "/our-placement" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact Us", href: "/contact" },
+];
   const toggleMobileDropdown = (label: string) => {
     setMobileDropdown((prev) => (prev === label ? null : label));
   };
@@ -1142,7 +1221,7 @@ export function Navigation() {
                     disabled={isSubmitting}
                     className="inline-flex min-w-[200px] items-center justify-center rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    {isSubmitting ? "Submitting..." : "Send"}
+                    {isSubmitting ? "Submitting..." : "Apply Now!"}
                   </button>
                 </div>
 

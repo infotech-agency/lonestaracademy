@@ -156,7 +156,7 @@ export default function CertificateSection() {
 
         <div className="mt-12 text-center">
           <a
-            href="#apply"
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-50 bg-orange-600 px-7 py-4 font-bold text-white shadow-xl transition hover:-translate-y-1 hover:bg-orange-600"
           >
              Apply Now 

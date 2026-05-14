@@ -129,7 +129,7 @@ export default function PlacementPage() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="/contact-us"
+                  href="/contact"
                   className="inline-flex items-center rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600"
                 >
                   Start Your Career

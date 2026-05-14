@@ -538,7 +538,7 @@ export default function AboutPage() {
                   Contact Us
                 </a>
                 <a
-                  href="/admission-form"
+                  href="/contact"
                   className="rounded-2xl border border-[#2146C7] bg-white px-6 py-3 text-sm font-semibold text-[#2146C7] transition hover:bg-[#DBEAFE]"
                 >
                   Apply Now
