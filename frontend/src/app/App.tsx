@@ -194,7 +194,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      <ShortTermCourses />
+      {/* <ShortTermCourses /> */}
       <AdditionalFeatures />
       <About />
       <TrainingProcess />

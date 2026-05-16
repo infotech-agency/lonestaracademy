@@ -45,9 +45,9 @@ export function SuccessStories() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
-        ><h2 className="text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl">
+        ><h1 className="text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl">
   Our Students <span className="text-blue-600">Learning Journey</span>
-</h2>
+</h1>
 
           <p className="mt-4 text-sm leading-6 text-gray-600 sm:text-base">
           We provide practical, industry-ready training with expert guidance and live projects.  

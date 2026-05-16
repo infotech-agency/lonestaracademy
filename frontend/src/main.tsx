@@ -70,6 +70,8 @@ import BlogPage from "./app/pages/BlogPage";
 import NotFound from "./app/pages/NotFound";
 import PrivacyPolicy from "./app/pages/PrivacyPage";
 import TermsAndConditions from "./app/pages/TermsPage";
+import BlogDetailPage from "./app/pages/BlogDetailPage";
+import AdmissionPage from "./app/pages/AdmissionPageSingle";
 // import BlogDetailPage from "./app/pages/BlogDetailPage";
 
 createRoot(document.getElementById("root")!).render(
@@ -90,13 +92,14 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/privacy" element={<PrivacyPolicy/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
+        <Route path="/admission-form" element={<AdmissionPage/>}/>
         {/* <Route path="/blog/:slugOrId" element={<BlogDetailPage />} /> */}
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/our-placement" element={<TeamPage />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/:slug" element={<CourseDetailPage />} />
-
-
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
+        <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

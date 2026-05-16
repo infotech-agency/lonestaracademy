@@ -13,7 +13,7 @@ export function OurBranches() {
   
     {
       name: "Gurgaon",
-      address: "Comming Soon",
+      address: "Coming Soon",
       mapLink: "#",
       phone: "9345045466",
     },
@@ -25,7 +25,7 @@ export function OurBranches() {
     },
     {
       name: "Noida",
-      address: "Comming Soon",
+      address: "Coming Soon",
       mapLink: "#",
       phone: "9345045466",
     },

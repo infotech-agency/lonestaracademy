@@ -260,7 +260,7 @@ export default function PlacementPage() {
             viewport={{ once: true }}
             className="text-3xl font-bold sm:text-4xl"
           >
-            Start Your Journey Towards a Successful Career
+            Start Your Journey Towards a Successful Career 
           </motion.h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-blue-100">
@@ -279,7 +279,7 @@ export default function PlacementPage() {
             </a>
 
             <a
-              href="/contact-us"
+              href="/contact"
               className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15"
             >
               Talk to Counselor

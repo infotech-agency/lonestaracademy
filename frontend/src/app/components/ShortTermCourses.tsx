@@ -15,7 +15,6 @@
 //   price: string;
 //   image: string;
 // }
-
 // export default function ShortTermCourses() {
 //   const [courses, setCourses] = useState<Course[]>([]);
 //   const [loading, setLoading] = useState(true);
@@ -369,9 +368,9 @@ export default function ShortTermCourses() {
           <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4">
             Short Term Courses
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Upgrade Your Skills with Industry-Focused Courses
-          </h2>
+          </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Learn practical tools and technologies through our short-term
             professional courses designed for working professionals and students.
@@ -465,7 +464,7 @@ export default function ShortTermCourses() {
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition transform hover:scale-[1.02]"
                   >
-                    Enroll Now
+                    Pay Now
                     <ArrowRight size={18} />
                   </a>
                 </div>

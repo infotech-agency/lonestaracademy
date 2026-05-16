@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Phone, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function FloatingButtons() {
   return (
@@ -68,9 +69,11 @@ export function FloatingButtons() {
           </a>
 
           {/* Callback Button */}
+          <Link to="/contact">
           <button className="px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all font-semibold shadow-md">
             Request a Call Back
           </button>
+          </Link>
         </div>
       </div>
 

@@ -238,7 +238,7 @@ const PrivacyPolicy = () => {
   return (
     <>
     <Navigation/>
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 text-zinc-700">
       {/* Hero Banner - Simple without curve */}
       <div className="relative h-[300px] md:h-[350px] overflow-hidden">
         <div 

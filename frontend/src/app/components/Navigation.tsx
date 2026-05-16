@@ -522,7 +522,7 @@
 // }
 
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import {
   Phone,
   Menu,
@@ -581,65 +581,8 @@ export function Navigation() {
   const [idProof, setIdProof] = useState<File | null>(null);
   const [photo, setPhoto] = useState<File | null>(null);
 
-  // const menuItems = [
-  //   {
-  //     label: "Courses",
-  //     submenu: [
-  //       { label: "Business Analytics", href: "/courses/6a0404409522cb10bdef1e3b" },
-  //       { label: "Data Analytics", href: "/courses/6a03150e55dfbec1bf33f116" },
-  //       { label: "Data Science", href: "/courses/6a0319f59f8bf690e424f5b2" },
-  //       { label: "Digital Marketing", href: "/courses/6a031be09f8bf690e424f5b5" },
-  //       { label: "Cloud Computing", href: "/courses/6a031a9f9f8bf690e424f5b3" },
-  //       { label: "Financial Modelling", href: "/courses/6a031b4b9f8bf690e424f5b4" },
-  //       { label: "All Courses", href: "/courses" },
-  //     ],
-  //   },
-  //   { label: "About Us", href: "/about" },
-  //   { label: "Our Placement", href: "/team" },
-  //   { label: "Testimonials", href: "/testimonials" },
-  //   { label: "Blog", href: "/blog" },
-  //   { label: "Contact Us", href: "/contact" },
-  // ];
-//   const menuItems = [
-//   {
-//     label: "Courses",
-//     submenu: [
-//       {
-//         label: "Business Analytics",
-//         href: "/business-analytics-course-delhi",
-//       },
-//       {
-//         label: "Data Analytics",
-//         href: "/data-analytics-course-delhi",
-//       },
-//       {
-//         label: "Data Science",
-//         href: "/data-science-course-delhi",
-//       },
-//       {
-//         label: "Digital Marketing",
-//         href: "/digital-marketing-course-delhi",
-//       },
-//       {
-//         label: "Cloud Computing",
-//         href: "/cloud-computing-course-delhi",
-//       },
-//       {
-//         label: "Financial Modelling",
-//         href: "/financial-modelling-course-delhi",
-//       },
-//       {
-//         label: "All Courses",
-//         href: "/courses",
-//       },
-//     ],
-//   },
-//   { label: "About Us", href: "/about" },
-//   { label: "Our Placement", href: "/team" },
-//   { label: "Testimonials", href: "/testimonials" },
-//   { label: "Blog", href: "/blog" },
-//   { label: "Contact Us", href: "/contact" },
-// ];
+
+
   const menuItems = [
   {
     label: "Courses",
@@ -815,6 +758,11 @@ export function Navigation() {
                   Icon: Linkedin,
                   label: "LinkedIn",
                 },
+                {
+                  href: "https://www.linkedin.com/company/lonestaracademy-in/?viewAsMember=true",
+                  Icon: X,
+                  label: "X",
+                },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
@@ -831,16 +779,17 @@ export function Navigation() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4">
+        {/* <div className="mx-auto max-w-7xl px-4">
           <div className="flex min-h-[72px] items-center justify-between gap-4 py-3">
             <div className="flex items-center gap-6 lg:gap-12">
+            
               <Link to="/" className="flex shrink-0 items-center">
-                <img
-                  src="/logo.jpeg"
-                  alt="Lone Star Academy"
-                  className="h-10 w-auto object-contain sm:h-11 md:h-22"
-                />
-              </Link>
+  <img
+    src="/logo.jpeg"
+    alt="Lone Star Academy"
+    className="h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-20"
+  />
+</Link>
 
               <div className="hidden items-center gap-6 lg:flex xl:gap-8">
                 {menuItems.map((item) => (
@@ -934,8 +883,114 @@ export function Navigation() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
+        <div className="mx-auto max-w-7xl px-4">
+  <div className="flex min-h-[72px] items-center justify-between gap-4 py-3">
+    <div className="flex items-center gap-6 lg:gap-12">
+    
+      <Link to="/" className="flex shrink-0 items-center">
+        <img
+          src="/logo.jpeg"
+          alt="Lone Star Academy"
+          className="h-16 w-auto object-contain sm:h-20 md:h-24 lg:h-28"
+        />
+      </Link>
 
+      <div className="hidden items-center gap-6 lg:flex xl:gap-8">
+        {menuItems.map((item) => (
+          <div
+            key={item.label}
+            className="relative"
+            onMouseEnter={() =>
+              item.submenu && setActiveDropdown(item.label)
+            }
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            {item.submenu ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveDropdown((prev) =>
+                      prev === item.label ? null : item.label
+                    )
+                  }
+                  className={`flex items-center gap-2 transition-all ${
+                    item.label === "Courses"
+                      ? "rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:from-orange-600 hover:to-orange-700 hover:shadow-lg"
+                      : "text-sm font-medium text-gray-800 hover:text-blue-600 xl:text-base"
+                  }`}
+                >
+                  {item.label}
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform ${
+                      activeDropdown === item.label ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {activeDropdown === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 top-full z-50 mt-3 min-w-[240px] rounded-xl border border-gray-100 bg-white py-2 shadow-xl"
+                    >
+                      {item.submenu.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          to={sub.href}
+                          className={`block px-4 py-2.5 text-sm transition-colors hover:bg-blue-50 hover:text-blue-600 ${
+                            sub.label === "All Courses"
+                              ? "border-t border-gray-100 font-semibold text-orange-600"
+                              : "text-gray-700"
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </>
+            ) : (
+              <Link
+                to={item.href || "/"}
+                className="flex items-center gap-1 text-sm font-medium text-gray-800 transition-colors hover:text-blue-600 xl:text-base"
+              >
+                {item.label}
+              </Link>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <Link to="/admission-form">
+      <button
+        type="button"
+        // onClick={openAdmissionModal}
+        className="hidden rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:from-orange-600 hover:to-orange-700 hover:shadow-lg sm:inline-flex lg:px-5"
+      >
+        Admission Form
+      </button>
+      </Link>
+
+      <button
+        type="button"
+        className="inline-flex items-center justify-center rounded-lg p-2 text-gray-800 transition hover:bg-gray-100 lg:hidden"
+        onClick={() => setMobileMenuOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+      >
+        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
+  </div>
+</div>
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div

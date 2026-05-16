@@ -470,9 +470,9 @@ export function PlacedStudents() {
             transition={{ duration: 0.5 }}
             className="mb-10"
           >
-            <h2 className="text-3xl font-bold text-[#0b3a82] sm:text-4xl lg:text-5xl">
-              Our Placements
-            </h2>
+            <h1 className="text-3xl font-bold text-[#0b3a82] sm:text-4xl lg:text-5xl">
+              Our Placements 
+            </h1>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-[#35558f] sm:text-base">
               Our students are placed in top MNC companies with high-paying job roles.
             </p>
@@ -579,27 +579,7 @@ export function PlacedStudents() {
             </div>
           )}
 
-          {/* Hiring companies section - uncomment if needed */}
-          {/* <div className="mt-16">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 text-center text-2xl font-bold text-[#0b3a82] sm:text-3xl"
-            >
-              Hiring Companies
-            </motion.h3>
-
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-              {hiringCompanies.map((company) => (
-                <CompanyLogo
-                  key={company.name}
-                  company={company}
-                  getFallbackLogo={getFallbackLogo}
-                />
-              ))}
-            </div>
-          </div> */}
+         
         </div>
       </section>
     </>

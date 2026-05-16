@@ -86,9 +86,9 @@ export default function ContactPage() {
             className="mx-auto max-w-5xl"
           >
             <div className="mb-10 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+              <h1 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 Contact <span className="text-blue-700">Lone Star Academy</span>
-              </h2>
+              </h1>
               <p className="mx-auto max-w-3xl text-base leading-8 text-gray-600 md:text-lg">
                 Ready to take the next step in your career? Contact Lone Star Academy
                 today to learn more about our expert-led Data Analysis Courses,
