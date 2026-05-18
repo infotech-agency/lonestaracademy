@@ -537,6 +537,7 @@
 //   );
 // }
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../../../utils/baseUrl";
 
 interface IdProof {
   public_id: string;
@@ -805,9 +806,10 @@ export default function AdmissionsPage() {
   const [selected, setSelected] = useState<Admission | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const PER_PAGE = 10;
-
+  
   useEffect(() => {
-    fetch("http://localhost:3001/api/admissions")
+    // fetch("http://localhost:3001/api/admissions")
+    fetch(`${BASE_URL}/api/admissions`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();

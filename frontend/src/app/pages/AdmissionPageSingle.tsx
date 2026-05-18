@@ -4,6 +4,7 @@ import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { Upload, X, CheckCircle, AlertCircle } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { BASE_URL } from "../../../utils/baseUrl";
 
 type FormData = {
   name: string;
@@ -248,7 +249,8 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     // Send to backend API
     const response = await fetch(
       // "https://api.lonestaracademy.in/api/admission", // change if needed
-      "http://localhost:3001/api/admission",
+      // "http://localhost:3001/api/admission",
+      `${BASE_URL}/api/admission`,
       {
         method: "POST",
         body: payload,

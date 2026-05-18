@@ -233,7 +233,7 @@ import { Link } from "react-router-dom";
           {/* Areas - Centered text */}
           <div className="border-b border-gray-800 py-10">
             <h4 className="mb-4 text-center text-xl text-white">
-              Are You Located in Any of these Areas
+             See If We Serve Your Area
             </h4>
 
             <p className="px-4 text-center text-sm leading-8 text-gray-500 md:px-10 lg:px-20">

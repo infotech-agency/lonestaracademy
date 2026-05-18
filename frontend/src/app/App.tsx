@@ -30,6 +30,7 @@ import CertificateSection from "./components/ui/CertificateSection";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../utils/baseUrl";
 import ShortTermCourses from "./components/ShortTermCourses";
+import Testimonials from "./components/VideoTestimonials";
 
 function CourseDetails() {
   const { slug } = useParams();
@@ -206,6 +207,7 @@ export default function App() {
       <WhyChooseUsSection />
       <PlacedStudents />
       <New />
+      <Testimonials/>
       <CertificateSection />
 
       <section className="bg-white py-20">

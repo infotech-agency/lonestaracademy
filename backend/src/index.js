@@ -16,6 +16,7 @@ const authRouter = require("./routes/auth");
 const placementRouter = require("./routes/placement"); // <-- Placement Route Import
 const tilesRoutes = require("./routes/tiles")
 const admissionRouter = require("./routes/admission");
+const testimonialRouter = require("./routes/testimonialRoutes");
 ;
 // Middleware
 app.use(cors({
@@ -42,6 +43,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/placements", placementRouter); // <-- Placement API Route
 app.use("/api/tiles",tilesRoutes)
 app.use("/api/admission", admissionRouter);
+app.use("/api/testimonials", testimonialRouter);
 // Serve local uploads
 app.use('/uploads', express.static(path.join(__dirname, '../../uploads')));
 
