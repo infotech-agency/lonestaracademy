@@ -251,25 +251,44 @@ import { Link } from "react-router-dom";
           </div>
 
           {/* Bottom - Centered on mobile */}
-          <div className="py-6">
-            <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
-              <p className="text-sm text-gray-500 text-center sm:text-left">
-                © 2026 Lone Star Academy. All rights reserved.
-              </p>
+        {/* Bottom Section */}
+<div className="py-6">
+  <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+    {/* Copyright */}
+    <p className="text-center text-sm text-gray-500 sm:text-left">
+      © 2026 Lone Star Academy. All rights reserved.
+    </p>
 
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <a href="/privacy" className="text-gray-500 hover:text-white">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-gray-500 hover:text-white">
-                  Terms of Service
-                </a>
-                {/* <a href="/admin" className="text-gray-600 hover:text-gray-400">
-                  Admin
-                </a> */}
-              </div>
-            </div>
-          </div>
+    {/* Footer Links */}
+    <div className="flex flex-wrap justify-center gap-4 text-sm">
+      <a
+        href="/privacy"
+        className="text-gray-500 transition-colors duration-300 hover:text-white"
+      >
+        Privacy Policy
+      </a>
+      <a
+        href="/terms"
+        className="text-gray-500 transition-colors duration-300 hover:text-white"
+      >
+        Terms of Service
+      </a>
+    </div>
+  </div>
+
+  {/* Designed By */}
+  <div className="mt-4 border-t border-gray-800 pt-4 text-center text-sm text-gray-500">
+    Designed & Developed with ❤️ by{" "}
+    <a
+      href="https://www.infotechagency.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-orange-400 transition-colors duration-300 hover:text-orange-300"
+    >
+      Infotech Agency
+    </a>
+  </div>
+</div>
         </div>
       </footer>
     );

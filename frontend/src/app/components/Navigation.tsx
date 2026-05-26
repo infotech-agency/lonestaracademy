@@ -209,62 +209,78 @@ export function Navigation() {
     <>
       <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
         <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center justify-center gap-2 text-xs sm:justify-start sm:text-sm">
-              <Phone size={14} />
-              <a
-                href="tel:9711709644"
-                className="transition-colors hover:text-blue-200"
-              >
-                For Enquiry: 9711709644
-              </a>
-            </div>
+          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+  {/* Phone Number */}
+  <div className="flex items-center justify-center gap-2 text-xs sm:justify-start sm:text-sm">
+    <Phone size={14} />
+    <a
+      href="tel:9711709644"
+      className="transition-colors hover:text-blue-200"
+    >
+      For Enquiry: 9711709644
+    </a>
+  </div>
 
-            {/* <div>
-              <a href="https://forms.eduqfix.com/lsaof/add" className="bg-orange-500 px-4 py-2 rounded-md">Pay Now!</a>
-            </div> */}
-            <div>
-  <a href="https://forms.eduqfix.com/lsaof/add" 
-     className="bg-orange-500 px-4 py-2 rounded-md font-semibold text-white shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_25px_rgba(249,115,22,0.8)] transition-all duration-300 transform hover:-translate-y-0.5 inline-block">
-     Pay Now!
-  </a>
+  {/* Pay Now Button */}
+  <div className="flex justify-center sm:justify-center">
+    <a
+      href="https://forms.eduqfix.com/lsaof/add"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        inline-flex items-center justify-center
+        w-full max-w-[220px] sm:w-auto
+        bg-orange-500
+        px-6 py-2.5
+        rounded-md
+        font-semibold text-white text-sm
+        shadow-[0_0_15px_rgba(249,115,22,0.5)]
+        hover:shadow-[0_0_25px_rgba(249,115,22,0.8)]
+        transition-all duration-300
+        transform hover:-translate-y-0.5
+      "
+    >
+      Pay Now!
+    </a>
+  </div>
+
+  {/* Social Icons */}
+  <div className="hidden items-center justify-center gap-3 sm:flex sm:justify-end sm:gap-4">
+    {[
+      {
+        href: "https://www.facebook.com/people/Lone-Star-Academy/100087175243517/",
+        Icon: Facebook,
+        label: "Facebook",
+      },
+      {
+        href: "https://www.instagram.com/lonestaracademy_india?igshid=MDE2OWE1N2Q%3D",
+        Icon: Instagram,
+        label: "Instagram",
+      },
+      {
+        href: "https://www.linkedin.com/company/lonestaracademy-in/?viewAsMember=true",
+        Icon: Linkedin,
+        label: "LinkedIn",
+      },
+      {
+        href: "https://www.linkedin.com/company/lonestaracademy-in/?viewAsMember=true",
+        Icon: X,
+        label: "X",
+      },
+    ].map(({ href, Icon, label }) => (
+      <a
+        key={label}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full bg-white/10 p-1.5 transition-all hover:scale-105 hover:bg-white/20"
+        aria-label={label}
+      >
+        <Icon size={16} />
+      </a>
+    ))}
+  </div>
 </div>
-            <div className="hidden items-center justify-center gap-3 sm:flex sm:justify-end sm:gap-4">
-              {[
-                {
-                  href: "https://www.facebook.com/people/Lone-Star-Academy/100087175243517/",
-                  Icon: Facebook,
-                  label: "Facebook",
-                },
-                {
-                  href: "https://www.instagram.com/lonestaracademy_india?igshid=MDE2OWE1N2Q%3D",
-                  Icon: Instagram,
-                  label: "Instagram",
-                },
-                {
-                  href: "https://www.linkedin.com/company/lonestaracademy-in/?viewAsMember=true",
-                  Icon: Linkedin,
-                  label: "LinkedIn",
-                },
-                {
-                  href: "https://www.linkedin.com/company/lonestaracademy-in/?viewAsMember=true",
-                  Icon: X,
-                  label: "X",
-                },
-              ].map(({ href, Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-white/10 p-1.5 transition-all hover:scale-105 hover:bg-white/20"
-                  aria-label={label}
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
    

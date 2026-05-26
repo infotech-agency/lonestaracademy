@@ -1,12 +1,8 @@
-// routes/testimonialRoutes.js
+
 const express = require("express");
 const router = express.Router();
 const Testimonial = require("../models/Testimonial");
 
-/**
- * @route   POST /api/testimonials
- * @desc    Create testimonial
- */
 router.post("/", async (req, res) => {
   try {
     const { title, description, youtubeUrl, isActive, sortOrder } = req.body;
