@@ -27,6 +27,7 @@ app.use(cors({
     "https://www.lonestaracademy.in",
     "https://lonestaracademy.in",
     "https://blue-goat-762498.hostingersite.com",
+    "https://ivory-dunlin-460340.hostingersite.com",
     "https://sandybrown-wallaby-261267.hostingersite.com",
     "https://lightseagreen-deer-262241.hostingersite.com",
   ],
