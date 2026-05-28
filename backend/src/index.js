@@ -21,11 +21,11 @@ const testimonialRouter = require("./routes/testimonialRoutes");
 // Middleware
 app.use(cors({
   origin: [
+    "https://lonestaracademy.in",
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "https://www.lonestaracademy.in",
-    "https://lonestaracademy.in",
     "https://blue-goat-762498.hostingersite.com",
     "https://ivory-dunlin-460340.hostingersite.com",
     "https://sandybrown-wallaby-261267.hostingersite.com",
