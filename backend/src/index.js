@@ -17,7 +17,7 @@ const placementRouter = require("./routes/placement"); // <-- Placement Route Im
 const tilesRoutes = require("./routes/tiles")
 const admissionRouter = require("./routes/admission");
 const testimonialRouter = require("./routes/testimonialRoutes");
-;
+const adminRouter = require('./routes/adminRoutes');
 // Middleware
 app.use(cors({
   origin: [
@@ -50,6 +50,7 @@ app.use("/api/placements", placementRouter); // <-- Placement API Route
 app.use("/api/tiles",tilesRoutes)
 app.use("/api/admission", admissionRouter);
 app.use("/api/testimonials", testimonialRouter);
+app.use("/api/admin", adminRouter);
 // Serve local uploads
 app.use('/uploads', express.static(path.join(__dirname, '../../uploads')));
 
@@ -64,7 +65,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
