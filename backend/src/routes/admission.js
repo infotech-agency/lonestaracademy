@@ -178,7 +178,7 @@
 const express = require("express");
 const { upload } = require("../config/cloudinary"); // existing Cloudinary multer setup
 const Admission = require("../models/Admission");
-
+const sendAdmissionMail = require("../utils/sendAdmissionMail");
 const router = express.Router();
 
 /**
@@ -195,6 +195,78 @@ const router = express.Router();
  * - idProof (file)
  * - photo (file)
  */
+// router.post(
+//   "/",
+//   upload.fields([
+//     { name: "idProof", maxCount: 1 },
+//     { name: "photo", maxCount: 1 },
+//   ]),
+//   async (req, res) => {
+//     try {
+//       const {
+//         name,
+//         email,
+//         phone,
+//         course,
+//         dob,
+//         address,
+//         message,
+//       } = req.body;
+
+//       // Validation - branch and country removed
+//       if (!name || !email || !phone || !course) {
+//         return res.status(400).json({
+//           success: false,
+//           message: "Name, email, phone and course are required fields.",
+//         });
+//       }
+
+//       const files = req.files || {};
+
+//       // Cloudinary URLs from existing upload middleware
+//       const idProofFile = files.idProof?.[0];
+//       const photoFile = files.photo?.[0];
+
+//       const admissionData = {
+//         name,
+//         email,
+//         phone,
+//         course,
+//         dob: dob || "",
+//         address: address || "",
+//         message: message || "",
+
+//         idProof: idProofFile
+//           ? {
+//               public_id: idProofFile.filename || idProofFile.public_id,
+//               secure_url: idProofFile.path,
+//             }
+//           : null,
+
+//         photo: photoFile
+//           ? {
+//               public_id: photoFile.filename || photoFile.public_id,
+//               secure_url: photoFile.path,
+//             }
+//           : null,
+//       };
+
+//       const admission = await Admission.create(admissionData);
+
+//       res.status(201).json({
+//         success: true,
+//         message: "Admission form submitted successfully.",
+//         data: admission,
+//       });
+//     } catch (error) {
+//       console.error("Admission Form Error:", error);
+//       res.status(500).json({
+//         success: false,
+//         message: error.message || "Server error",
+//       });
+//     }
+//   }
+// );
 router.post(
   "/",
   upload.fields([
@@ -203,17 +275,8 @@ router.post(
   ]),
   async (req, res) => {
     try {
-      const {
-        name,
-        email,
-        phone,
-        course,
-        dob,
-        address,
-        message,
-      } = req.body;
+      const { name, email, phone, course, dob, address, message } = req.body;
 
-      // Validation - branch and country removed
       if (!name || !email || !phone || !course) {
         return res.status(400).json({
           success: false,
@@ -222,8 +285,6 @@ router.post(
       }
 
       const files = req.files || {};
-
-      // Cloudinary URLs from existing upload middleware
       const idProofFile = files.idProof?.[0];
       const photoFile = files.photo?.[0];
 
@@ -235,23 +296,20 @@ router.post(
         dob: dob || "",
         address: address || "",
         message: message || "",
-
         idProof: idProofFile
-          ? {
-              public_id: idProofFile.filename || idProofFile.public_id,
-              secure_url: idProofFile.path,
-            }
+          ? { public_id: idProofFile.filename || idProofFile.public_id, secure_url: idProofFile.path }
           : null,
-
         photo: photoFile
-          ? {
-              public_id: photoFile.filename || photoFile.public_id,
-              secure_url: photoFile.path,
-            }
+          ? { public_id: photoFile.filename || photoFile.public_id, secure_url: photoFile.path }
           : null,
       };
 
       const admission = await Admission.create(admissionData);
+
+      // Email bhejo — lekin isse form submission fail nahi hona chahiye agar mail fail ho jaye
+      sendAdmissionMail(admission).catch((err) =>
+        console.error("Failed to send admission email:", err)
+      );
 
       res.status(201).json({
         success: true,
@@ -267,6 +325,7 @@ router.post(
     }
   }
 );
+
 
 /**
  * GET all admissions
