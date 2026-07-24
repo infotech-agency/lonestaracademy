@@ -6,6 +6,7 @@
 //   req.user = { id: 'admin_hardcoded', role: 'admin' };
 //   next();
 // };
+
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
