@@ -376,27 +376,27 @@ router.get("/:id", async (req, res) => {
 /**
  * DELETE admission
  */
-router.delete("/:id", async (req, res) => {
-  try {
-    const admission = await Admission.findByIdAndDelete(req.params.id);
+// router.delete("/:id", async (req, res) => {
+//   try {
+//     const admission = await Admission.findByIdAndDelete(req.params.id);
 
-    if (!admission) {
-      return res.status(404).json({
-        success: false,
-        message: "Admission not found",
-      });
-    }
+//     if (!admission) {
+//       return res.status(404).json({
+//         success: false,
+//         message: "Admission not found",
+//       });
+//     }
 
-    res.json({
-      success: true,
-      message: "Admission deleted successfully",
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-});
+//     res.json({
+//       success: true,
+//       message: "Admission deleted successfully",
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       message: error.message,
+//     });
+//   }
+// });
 
 module.exports = router;
